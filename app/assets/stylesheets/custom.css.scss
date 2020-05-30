@@ -2,5 +2,75 @@
 //eg change color of navigation bar,
 //add code upon the @import lines
 
+$navbar-default-bg: #f0ad4e;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo {
+    float:left;
+    font-size: 1.9em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+#logo:hover {
+    color: rgb(145, 104, 67);
+    text-decoration: palevioletred;
+}
+
+.center {
+    text-align: center;
+}
+
+.jumbotron {
+    background-image: asset-url('wallpaper.png');
+    background-size: contain;
+    height: 750px;
+    width: 1150px;
+    
+}
+
+.jumbotron h1{
+    color: black;
+    text-align: center;
+    margin: 250px;
+    margin-bottom: 50px;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-size: 7em;
+    font-family: monospace;
+
+}
+
+.btn-lg {
+    font-size: 1.3em;
+    background-color: darkcyan;
+}
+
+footer {
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: #777;
+}
+
+footer a:hover {
+    color: #222;
+}
+
+footer small {
+    float: left;
+}
+
+footer ul {
+    float: right;
+    list-style: none;
+}
+
+footer ul li{
+    float: left;
+    margin-left: 15px;
+}
