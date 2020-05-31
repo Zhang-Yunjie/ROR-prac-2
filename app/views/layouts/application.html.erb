@@ -15,5 +15,16 @@
       <%= yield %>
     </div>
     <%= render 'layouts/footer'%>
+
+    <% flash.each do |key, value| %>
+      <div class="alert alert-success">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span></button>
+      
+      <%= value %>
+      </div>
+    <% end %>
   </body>
+
+  
 </html>
