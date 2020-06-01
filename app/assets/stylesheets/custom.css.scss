@@ -42,7 +42,19 @@ $navbar-default-bg: #f0ad4e;
     font-weight: bold;
     font-size: 7em;
     font-family: monospace;
+}
 
+.jumbotron h2{
+    color: black;
+    width: 80%;
+    text-align: center;
+    margin: 240px;
+    margin-left: 100px;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    font-weight: none;
+    font-size: 3.7em;
+    font-family: monospace;
 }
 
 .btn-lg {
@@ -76,6 +88,15 @@ footer ul li{
 }
 
 .alert-success {
+    position: fixed;
+    top: 65px; 
+    width: 81%;
+    margin-left: 141px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.alert-danger {
     position: fixed;
     top: 65px; 
     width: 81%;

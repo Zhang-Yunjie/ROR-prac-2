@@ -6,8 +6,8 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save 
-          flash[:notice] = "Welcome to NUSchedule, #{@user.username}!" 
-          redirect_to root_path
+          flash[:success] = "Welcome to NUSchedule, #{@user.username}!" 
+          redirect_to welcome_registered_path
 
         else 
             render 'new'
