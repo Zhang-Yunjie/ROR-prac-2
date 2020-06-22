@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'info/about'
   get 'welcome/home'
   get 'welcome/registered', to: 'welcome#registered'
+  get 'welcome/loggedin', to: 'welcome#loggedin'
   get 'modules', to: 'modules#new'
   get 'signup', to: 'users#new'
   post 'users', to: 'users#create'

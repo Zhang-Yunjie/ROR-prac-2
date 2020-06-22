@@ -21,6 +21,12 @@ gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'rails-ujs', '~> 0.1.0'
 
+# Gemfile for Rails 3+, Sinatra, and Merb
+gem 'will_paginate', '~> 3.1.0' 
+
+# Gemfile
+# gem "will_paginate", "~> 2.3.15", :require => nil
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
