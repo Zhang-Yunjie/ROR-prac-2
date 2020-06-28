@@ -9,14 +9,62 @@
 <br>
 <br>
 
-<h4 align="left"> Email address: <%= @user.email %> </h4>
+<h3 align="left", style = "text-decoration: underline;"> Email address: </h3>
+<h4 align="left">
+<%= @user.email %>
+</h4>
 
 
- <h4 align="left"> Seniority: <%= @user.seniority %></h4>
+<h3 align="left", style = "text-decoration: underline;"> Seniority: </h3>
+<h4 align="left">
+ <% if @user.seniority.present? %>
+      <%= @user.seniority %>
+  <% else %>
+      <%= link_to " Nil (Click to complete profile)" , edit_user_path(@user.id) %>
+  <% end %>
+</h4>
+
+<h3 align="left", style = "text-decoration: underline;"> Degree Program: </h3>
+<h4 align="left"> 
+    <% if @user.degree_program.present? %>
+      <%= @user.degree_program %>
+    <% else %>
+      <%= link_to " Nil (Click to complete profile)" , edit_user_path(@user.id) %>
+    <% end %>
+</h4>
 
 
- <h4 align="left"> Modules taken: </h4>
+<h3 align="left", style = "text-decoration: underline;"> Major: </h3>
+<h4 align="left">
+    <% if @user.first_major.present? %>
+      <%= @user.first_major%>
+      <% if @user.second_major.present? %>
+      (first major), <%=  @user.second_major%>  (second major)
+      <% end %>
+    <% else %>
+      <%= link_to " Nil (Click to complete profile)" , edit_user_path(@user.id) %>
+    <% end %>
+</h4>
 
- 
+<h3 align="left", style = "text-decoration: underline;"> Minor: </h3>
+<h4 align="left"> 
+  <% if @user.first_minor.present? %>
+      <%= @user.first_minor%>
+      <% if @user.second_minor.present? %>
+        , <%=  @user.second_minor%>  (second minor)
+      <% end %>
+    <% else %>
+      <%= link_to " Nil (Click to complete profile)" , edit_user_path(@user.id) %>
+    <% end %>
+</h4>
 
+<h3 align="left", style = "text-decoration: underline;"> Special Program: </h3>
+<h4 align="left"> 
+    <% if @user.special_program.present? %>
+      <%= @user.special_program %>
+    <% else %>
+      <%= link_to " Nil (Click to complete profile)" , edit_user_path(@user.id) %>
+    <% end %>
+</h4>
 
+<h3 align="left", , style = "text-decoration: underline;"> Modules taken: </h3>

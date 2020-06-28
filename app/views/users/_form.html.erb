@@ -49,8 +49,9 @@
             ['Year 1','Year 1'],
             ['Year 2','Year 2'],
             ['Year 3','Year 3'],
-            ['Year 4','Year 4']]), 
-            { :include_blank => 'Nil'} , class: "form-control")%>
+            ['Year 4','Year 4']], 
+            selected: @user.seniority,),
+            { :include_blank => 'Nil' } , class: "form-control")%>
         </div> 
       </div>
 
@@ -63,7 +64,8 @@
             ['Single Degree - Single major','Single Degree - Single major'],
             ['Single Degree - Double major','Single Degree - Double major'],
             ['Double Degree','Double Degree'],
-            ['Joint Degree','Joint Degree']]), 
+            ['Joint Degree','Joint Degree']],
+            selected: @user.degree_program), 
             { :include_blank => 'Nil' } , class: "form-control")%>
         </div> 
       </div>
@@ -94,9 +96,11 @@
             ['Double Degree in Business and Law',
              'Double Degree in Business and Law'], 
             ['Bachelor of Arts (with Honours) and Bachelor of Law (Honours)',
-             'Bachelor of Arts (with Honours) and Bachelor of Law (Honours)']   
-             ]), 
-            { :include_blank => 'Not applicable' } , class: "form-control")%>
+             'Bachelor of Arts (with Honours) and Bachelor of Law (Honours)'],
+            ['Not applicable ',
+             'Not applicable ']],
+             selected: @user.double_degree), 
+            { :include_blank => 'Nil' } , class: "form-control")%>
         </div> 
       </div>
 
@@ -114,7 +118,7 @@
            <%= f.label :Second_Major %>
         </div>
         <div class="col-sm-8">
-          <%= f.text_field :second_major, class: "form-control", placeholder: "Fill in your second major (Nil if not applicable)"%>
+          <%= f.text_field :second_major, class: "form-control", placeholder: "Fill in your second major (Ignore if not applicable)"%>
         </div> 
       </div>  
       
@@ -123,7 +127,7 @@
            <%= f.label :Minor %>
         </div>
         <div class="col-sm-8">
-          <%= f.text_field :first_minor, class: "form-control", placeholder: "Fill in your minor (Nil if not applicable)"%>
+          <%= f.text_field :first_minor, class: "form-control", placeholder: "Fill in your minor (Input Nil if not applicable)"%>
         </div> 
       </div>  
 
@@ -141,8 +145,10 @@
              'University Town College Programme (UTCP) '],
             ['Ridge View Residential College (RVRC) ',
              'Ridge View Residential College (RVRC) '],
-             ]), 
-            { :include_blank => 'Not applicable' } , class: "form-control")%>
+            ['Not applicable ',
+             'Not applicable  ']],
+             selected: @user.special_program), 
+            { :include_blank => 'Nil' } , class: "form-control")%>
         </div> 
       </div>    
 
