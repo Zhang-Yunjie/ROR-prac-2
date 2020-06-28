@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
 
+  get 'search', to: 'mods#search'
+
 
   get 'users/:id/complete', to: 'users#complete' #check why need this line
   resources :users,expect:[:new] 

@@ -1,0 +1,13 @@
+<h1> Search Results</h1>
+<% if !@mods.empty? %>
+  <%= render partial: "mod" %>
+<% else %>
+  <br>
+  <h4 align="left"> Sorry, no module found.</h4>
+<% end %>
+
+<p style="position:relative; bottom:5px;">
+<%= link_to 'Back to Module List', mods_path %>
+</p>
+
+  

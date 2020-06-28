@@ -1,19 +1,12 @@
 <h1 align="left"> Modules available</h1>
-<h4 align="left">
-<%= link_to 'Home', welcome_home_path %>
-</h4>
 
-<div align="left">
-  <% @mods.each do |mod| %>
-    <ul class="listing">
-      <div class="row">
-        <div class="well col-md-4 ">
-          <li><%= link_to mod.module_code, mod_path(mod) %> </li>
-          <li class=“article-title”, style="font-size:15px">
-          <%= link_to mod.module_title, mod_path(mod) %>
-          </li>
-        </div>
-      </div>
-    </ul>
-  <% end %>
+<div>
+<form class="form-group" action="/search" >
+  <input type="text" class="form-control" name="q" placeholder="Search for Module">
+  <br>
+  <button type="submit" class="btn btn-default">Search</button>
 </div>
+
+<br>
+
+<%= render 'mod' %>

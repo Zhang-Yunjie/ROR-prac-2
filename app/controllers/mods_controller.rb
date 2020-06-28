@@ -7,9 +7,23 @@ class ModsController < ApplicationController
         @mod = Mod.new(mod_params)
         if @mod.save
             flash[:notice] = "Module is successfully created"
-            redirect_to mod_path[@mod]
+            redirect_to mod_path(@mod)
         else
             render 'new'
+        end
+    end
+
+    def edit 
+        @mod = Mod.find(params[:id])
+    end
+
+    def update
+        @mod = Mod.find(params[:id])
+        if @mod.update(mod_params)
+            flash[:success] = "Module information was updated successfully"
+            redirect_to root_path
+        else
+            render 'edit'
         end
     end
 
@@ -20,6 +34,12 @@ class ModsController < ApplicationController
     def show
         @mod = Mod.find(params[:id])
     end
+
+    def search
+        @mods = Mod.where("module_title LIKE ? OR module_code LIKE ?", 
+            "%" + params[:q] + "%", "%" + params[:q] + "%")
+    end
+
 
     private
     def mod_params
