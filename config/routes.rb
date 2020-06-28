@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'welcome/registered', to: 'welcome#registered'
   get 'welcome/loggedin', to: 'welcome#loggedin'
   get 'modules', to: 'modules#new'
+
   get 'signup', to: 'users#new'
   post 'users', to: 'users#create'
 
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
 
-  
+  get 'users/:id/complete', to: 'users#complete' #check why need this line
   resources :users,expect:[:new]  
 
   root 'welcome#home'

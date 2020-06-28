@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_31_080252) do
+ActiveRecord::Schema.define(version: 2020_06_27_095839) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -18,6 +18,14 @@ ActiveRecord::Schema.define(version: 2020_05_31_080252) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
+    t.string "seniority"
+    t.string "degree_program"
+    t.string "first_major"
+    t.string "second_major"
+    t.string "first_minor"
+    t.string "second_minor"
+    t.string "special_program"
+    t.string "double_degree"
   end
 
 end

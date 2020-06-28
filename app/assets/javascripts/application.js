@@ -9,8 +9,14 @@
  
 //= require bootstrap-sprockets
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require underscore
+//= require dependent-fields
 //= require_tree .
 
+$(document).ready(function() {
+    DependentFields.bind()
+});
