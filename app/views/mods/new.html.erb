@@ -1,3 +1,40 @@
-<h1 align="center"> Modules Available </h1>
+<h1 align="center"> Create New Module</h1>
+
+<% if @mod.errors.any? %>
+    <h3> The following errors prevented the Module to be created </h3>
+    <ul>
+        <% @mod.errors.full_messages.each do |msg| %>
+            <li> <%= msg %> </li>
+        <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @mod do |m| %>
+
+    <h4 align="center">
+        <%= m.label :module_code %> <br/>
+        <%= m.text_field :module_code %>
+    </h4>
+
+    <h4 align="center">
+        <%= m.label :module_title %> <br/>
+        <%= m.text_field :module_title %>
+    </h4>
+
+    <h4 align="center">
+        <%= m.label :module_MC %> <br/>
+        <%= m.number_field :module_MC %>
+    </h4>
+
+    <h4 align="center">
+        <%= m.label :module_description %> <br/>
+        <%= m.text_area :module_description %>
+    </h4>
+
+    <h4 align="center">
+        <%= m.submit "Create module" %>
+    </h4>
+
+<% end %> 
 
 
