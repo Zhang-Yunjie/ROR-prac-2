@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :semesters
   get 'info/about'
   get 'welcome/home'
   get 'welcome/registered', to: 'welcome#registered'
@@ -15,10 +16,10 @@ Rails.application.routes.draw do
 
   get 'search', to: 'mods#search'
 
-
-  get 'users/:id/complete', to: 'users#complete' #check why need this line
   resources :users,expect:[:new] 
   resources :mods
+  resources :semesters
+  resources :user_mods
 
   root 'welcome#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

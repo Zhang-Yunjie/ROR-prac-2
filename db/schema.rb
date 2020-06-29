@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_28_162839) do
+ActiveRecord::Schema.define(version: 2020_06_29_133529) do
 
   create_table "mods", force: :cascade do |t|
     t.string "module_code"
@@ -19,6 +19,29 @@ ActiveRecord::Schema.define(version: 2020_06_28_162839) do
     t.integer "module_MC"
   end
 
+  create_table "modules", force: :cascade do |t|
+    t.string "module_code"
+    t.text "module_description"
+    t.string "module_title"
+    t.integer "MC"
+  end
+
+  create_table "semesters", force: :cascade do |t|
+    t.string "ay"
+    t.string "sem"
+    t.boolean "past"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_mods", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "mod_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["mod_id"], name: "index_user_mods_on_mod_id"
+    t.index ["user_id"], name: "index_user_mods_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
@@ -33,6 +56,9 @@ ActiveRecord::Schema.define(version: 2020_06_28_162839) do
     t.string "first_minor"
     t.string "second_minor"
     t.string "special_program"
+    t.string "double_degree"
   end
 
+  add_foreign_key "user_mods", "mods"
+  add_foreign_key "user_mods", "users"
 end

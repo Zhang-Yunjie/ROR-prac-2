@@ -1,4 +1,6 @@
 class Mod < ApplicationRecord
+    has_many :user_mods
+    has_many :users, through: :user_mods
 
     validates :module_code, presence: true, 
     length: { minimum: 6, maximum: 7 }, 

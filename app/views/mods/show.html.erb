@@ -8,6 +8,9 @@
 <h4 style = "text-decoration: underline;"> Module Description: </h4> 
 <h5> · <%= @mod.module_description %> </h5>
 
+<p><%= link_to "Add to my modules",user_mods_path(user: current_user, mod: @mod),
+                                   class:"btn btn-md btn-success", method: :post %></p>
+
 <p style="position:relative; bottom:5px;">
 <%= link_to 'Back to Module List', mods_path %>
 </p>

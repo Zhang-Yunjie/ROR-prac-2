@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<h1>List of Semesters</h1>
+
+<div align="left">
+  <% @semesters.sort_by {|semester| semester.ay}.each do |semester| %>
+    <ul class="listing">
+      <div class="row">
+        <div class="well col-md-4 ">
+          <li><%= link_to semester.ay + " " + semester.sem , semester_path(semester) %> </li>
+          </li>
+        </div>
+      </div>
+    </ul>
+   <% end %>
+</div>
+
+<br>
+
+<%= link_to 'Add a New Semester', new_semester_path %>
