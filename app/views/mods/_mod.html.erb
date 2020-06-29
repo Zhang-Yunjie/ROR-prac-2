@@ -1,5 +1,5 @@
 <div align="left">
-  <% @mods.each do |mod| %>
+  <% @mods.sort_by {|mod| mod.module_code}.each do |mod| %>
     <ul class="listing">
       <div class="row">
         <div class="well col-md-4 ">
