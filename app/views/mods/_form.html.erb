@@ -7,7 +7,7 @@
     </ul>
 <% end %>
 
-<%= form_for @mod do |m| %>
+<%= simple_form_for @mod do |m| %>
 
     <h4 align="center">
         <%= m.label :module_code %> <br/>
@@ -27,6 +27,11 @@
     <h4 align="center">
         <%= m.label :module_description %> <br/>
         <%= m.text_area :module_description %>
+    </h4>
+
+    <h4 align="center">
+        <%= m.label :module_prerequisite %> <br/>
+        <%= m.text_field :module_prerequisite %>
     </h4>
 
     <h4 align="center">

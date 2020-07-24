@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   resources :users,expect:[:new] 
   resources :mods
+  #root 'mods#index'
   resources :semesters
   resources :user_mods
 

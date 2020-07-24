@@ -10,20 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_29_133529) do
+ActiveRecord::Schema.define(version: 2020_07_24_064110) do
 
   create_table "mods", force: :cascade do |t|
     t.string "module_code"
     t.text "module_description"
     t.string "module_title"
     t.integer "module_MC"
-  end
-
-  create_table "modules", force: :cascade do |t|
-    t.string "module_code"
-    t.text "module_description"
-    t.string "module_title"
-    t.integer "MC"
+    t.string "prerequisites"
+    t.string "module_prerequisite"
   end
 
   create_table "semesters", force: :cascade do |t|

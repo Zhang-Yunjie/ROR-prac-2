@@ -22,7 +22,7 @@ class ModsController < ApplicationController
         if @mod.update(mod_params)
             flash[:success] = "Module information was updated successfully"
             redirect_to root_path
-        else
+        else 
             render 'edit'
         end
     end
@@ -43,6 +43,6 @@ class ModsController < ApplicationController
 
     private
     def mod_params
-        params.require(:mod).permit(:module_code, :module_title, :module_MC, :module_description)
+        params.require(:mod).permit(:module_code, :module_title, :module_MC, :module_description, :prerequisite)
     end 
 end

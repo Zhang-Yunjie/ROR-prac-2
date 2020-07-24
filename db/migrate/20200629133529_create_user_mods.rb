@@ -3,7 +3,6 @@ class CreateUserMods < ActiveRecord::Migration[6.0]
     create_table :user_mods do |t|
       t.references :user, null: false, foreign_key: true
       t.references :mod, null: false, foreign_key: true
-
       t.timestamps
     end
   end
