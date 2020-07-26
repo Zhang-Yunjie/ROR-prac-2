@@ -8,12 +8,24 @@
 </h4>
 
 <h3 style = "text-decoration: underline;"> Modules taken </h3>
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Panel title</h3>
+  </div>
+  <div class="panel-body">
+    <ul class="list-group">
+      <% @semester.user_mods.where(user_id: current_user.id).each do |user_mod| %>
+        <li class="list-group-item"><a href="<%= mod_path(user_mod.mod_id) %>"><%= user_mod.mod.module_title %></a></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 <h4 style="position:relative; bottom:5px; text-decoration: underline;">
-<% if !@semester.past %> 
-  <%= link_to 'Add module', mods_path %>
+  <% if !@semester.past %>
+    <%= link_to 'Add module', mods_path %>
   <% end %>
-</h4> 
+</h4>
 
 <p style="position:relative; bottom:3px;">
 <%= link_to 'Edit', edit_semester_path(@semester) %> |

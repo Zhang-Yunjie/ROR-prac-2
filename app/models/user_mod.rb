@@ -11,6 +11,7 @@
 class UserMod < ApplicationRecord
   belongs_to :user
   belongs_to :mod
+  belongs_to :semester
 
   # validates prerequisite
   validate :prerequisite_class
