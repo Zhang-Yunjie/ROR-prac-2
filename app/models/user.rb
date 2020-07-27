@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string
+#  email           :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  password_digest :string
+#  seniority       :string
+#  degree_program  :string
+#  first_major     :string
+#  second_major    :string
+#  first_minor     :string
+#  second_minor    :string
+#  special_program :string
+#  double_degree   :string
+#
 class User < ActiveRecord::Base
   has_many :user_mods
   has_many :mods, through: :user_mods

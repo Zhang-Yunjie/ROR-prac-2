@@ -6,29 +6,21 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= render 'layouts/navigation'%>
     <div class="container">
+      <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"></button>
+          <%= message %>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer'%>
-
-
-  <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <%= message %>
-    </div>
-  <% end %>
-
-  <% flash.each do |name, msg| %>
-    <ul>
-      <li><%= msg %></li>
-    </ul>
-  <% end %>
-  </body>  
+  </body>
 </html>
 

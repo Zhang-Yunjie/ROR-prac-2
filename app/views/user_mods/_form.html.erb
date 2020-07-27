@@ -1,0 +1,8 @@
+<% if @user_mod.errors.any? %>
+    <h3> The following errors prevented the Module being added </h3>
+    <ul>
+        <% @user_mod.errors.full_messages.each do |msg| %>
+            <li> <%= msg %> </li>
+        <% end %>
+    </ul>
+<% end %>
