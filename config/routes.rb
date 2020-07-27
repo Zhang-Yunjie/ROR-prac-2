@@ -12,15 +12,15 @@ Rails.application.routes.draw do
 
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy'
+  get 'logout', to: 'sessions#destroy'
 
   get 'search', to: 'mods#search'
 
   resources :users,expect:[:new] 
   resources :mods
-  #root 'mods#index'
   resources :semesters
   resources :user_mods
+  get 'user_mods', to: 'user_mods#index'
 
   root 'welcome#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

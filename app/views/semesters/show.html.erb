@@ -15,7 +15,15 @@
   <div class="panel-body">
     <ul class="list-group">
       <% @semester.user_mods.where(user_id: current_user.id).each do |user_mod| %>
-        <li class="list-group-item"><a href="<%= mod_path(user_mod.mod_id) %>"><%= user_mod.mod.module_title %></a></li>
+        <li class="list-group-item">
+        <a href="<%= mod_path(user_mod.mod_id) %>">
+        <%= user_mod.mod.module_code %>
+        <%= user_mod.mod.module_title %>
+        <%= link_to 'Delete', user_mod_path(user_mod), method: :delete,
+            data: {comfirm: "Are you sure to delete this module from this semester"},
+            class: "btn btn-xs btn-danger"
+        %>
+        </a></li>
       <% end %>
     </ul>
   </div>

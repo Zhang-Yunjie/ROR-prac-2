@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 2020_07_26_043134) do
     t.string "module_prerequisite"
   end
 
+  create_table "modules", force: :cascade do |t|
+    t.string "module_code"
+    t.text "module_description"
+    t.string "module_title"
+    t.integer "MC"
+  end
+
   create_table "semesters", force: :cascade do |t|
     t.string "ay"
     t.string "sem"

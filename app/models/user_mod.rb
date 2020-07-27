@@ -26,10 +26,13 @@ class UserMod < ApplicationRecord
 
   def prerequisite_class
     text = self.mod&.module_prerequisite
-    if text.present?
-      errors.add("mod_id", "#{text} must read before reading module_title!")
+    mod_id = Mod.find_by(module_code: text) 
+    if UserMod.find_by(user_id: self.user_id, mod_id: mod_id).blank?
+      errors.add("mod_id", "#{text} must read before reading this module")
     end
   end
+
+
 
   def check_uniq
     if UserMod.find_by(user_id: self.user_id, mod_id: self.mod_id, semester_id: self.semester_id)

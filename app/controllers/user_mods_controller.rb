@@ -15,7 +15,20 @@ class UserModsController < ApplicationController
 		end
 
     def index
-      @user_mods = User_mods.all.order("created_at DESC")
+      @user_mods = UserMod.all.order("created_at DESC")
+    end
+
+    def show
+        @user_mod = UserMod.find(params[:id])
+    end
+
+    def destroy
+      mod = Mod.find(params[:id])
+      semester = Semester.find(params[:id])
+      @user_mod = UserMod.where(user_id: current_user.id, mod_id: mod.id, semester_id: semester.id).first
+      @user_mod.destroy
+      flash[:notice] = "Module was successfully deleted from this semester"
+      redirect_to mod_path(id: params[:user_mod][:mod_id])
     end
 
     private

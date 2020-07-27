@@ -44,6 +44,6 @@ class ModsController < ApplicationController
 
     private
     def mod_params
-        params.require(:mod).permit(:module_code, :module_title, :module_MC, :module_description, :prerequisite)
+        params.require(:mod).permit(:module_code, :module_title, :module_MC, :module_description, :module_prerequisite)
     end
 end

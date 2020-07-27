@@ -18,8 +18,8 @@
 #  double_degree   :string
 #
 class User < ActiveRecord::Base
-  has_many :user_mods
-  has_many :mods, through: :user_mods
+  has_many :user_mods, dependent: :destroy
+  has_many :mods, through: :user_mods, dependent: :destroy
 
   validates :username, presence: true,
              uniqueness: {case_sensitive: false},
