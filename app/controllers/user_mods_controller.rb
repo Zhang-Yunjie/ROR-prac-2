@@ -4,15 +4,13 @@ class UserModsController < ApplicationController
     end
 
     def create
-			@user_mod = UserMod.new(user_mod_params)
-			if @user_mod.save
+      @user_mod = UserMod.new(user_mod_params)
+      if @user_mod.save
         flash[:success] = "Module #{@user_mod.mod.module_code} was successfully added to your modules."
-        redirect_to mod_path(id: params[:user_mod][:mod_id])
-			else
-				flash[:danger] = @user_mod.errors.full_messages.first
-				redirect_to mod_path(id: params[:user_mod][:mod_id])
-			end
-		end
+      else
+	flash[:danger] = @user_mod.errors.full_messages.first
+      redirect_to mod_path(id: params[:user_mod][:mod_id])
+    end
 
     def index
       @user_mods = UserMod.all.order("created_at DESC")
@@ -27,7 +25,7 @@ class UserModsController < ApplicationController
       semester = Semester.find(params[:id])
       @user_mod = UserMod.where(user_id: current_user.id, mod_id: mod.id, semester_id: semester.id).first
       @user_mod.destroy
-      flash[:notice] = "Module was successfully deleted from this semester"
+      flash[:notice] = "Module was successfully deleted from this semester."
       redirect_to mod_path(id: params[:user_mod][:mod_id])
     end
 
