@@ -9,6 +9,7 @@ class UserModsController < ApplicationController
         flash[:success] = "Module #{@user_mod.mod.module_code} was successfully added to your modules."
       else
 	flash[:danger] = @user_mod.errors.full_messages.first
+      end
       redirect_to mod_path(id: params[:user_mod][:mod_id])
     end
 
